@@ -1,6 +1,13 @@
 -- Get mod path
 local mod_path = "" .. SMODS.current_mod.path
 
+-- Load misc.lua
+local f, err = SMODS.load_file("misc.lua")
+if err then
+    error(err)
+end
+f()
+
 -- Load all Jokers
 local files = NFS.getDirectoryItems(mod_path .. "jokers")
 for _, file in ipairs(files) do

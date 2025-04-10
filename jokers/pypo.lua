@@ -18,7 +18,7 @@ SMODS.Joker {
     loc_txt = {
         name = "Peripypo",
         text = {
-            "{C:attention}Snaking Straights{} add an additional {X:mult,C:white} X#2# {}",
+            "{C:roc_dummy}Snaking Straights{} add an additional {X:mult,C:white} X#2# {}",
             "Mult to this Joker.",
             "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
             "{C:attention}Snaking Straights{} are two consecutive {C:attention}Straights{}",
@@ -63,7 +63,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
 
         local table_contains = function(tbl, val)
-            for i, x in ipairs(tbl) do
+            for _, x in ipairs(tbl) do
                 if x == val then return true end
             end
             return false
@@ -81,8 +81,8 @@ SMODS.Joker {
         local conv_hand_to_list_idxs = function(hand)
             local conv = {}
 
-            for i, card in ipairs(hand) do
-                local idx = card:get_id()
+            for _, c in ipairs(hand) do
+                local idx = c:get_id()
                 if not(table_contains(conv, idx)) then
                     table.insert(conv, idx)
                 end
