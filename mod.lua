@@ -25,4 +25,6 @@ SMODS.current_mod.reset_game_globals = function(run_start)
         -- Initialize Catdark's initial xmult bonus
         G.GAME.catdarkmult = 0
     end
+
+    print(inspect(G.P_CENTERS.j_ALLEECORD_pypo))
 end

@@ -25,6 +25,11 @@ SMODS.Joker {
     },
     discovered = true,
 
+    pools = {
+        ["Joker"] = true,
+        ["Alleecord"] = true,
+    },
+
     -- image parameters
     atlas = "CatdarkAtlas",
     pos = { x = 0, y = 0 },

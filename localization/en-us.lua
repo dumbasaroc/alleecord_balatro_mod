@@ -5,7 +5,17 @@ return {
         Edition={},
         Enhanced={},
         Joker={},
-        Other={},
+        Other={
+            o_snaking_desc = {
+                name = "Snaking Straights",
+                text = {
+                    "{C:snaking_straights}Snaking Straights{} are two",
+                    "consecutive {C:attention}Straights{} that",
+                    "only have one overlapping {C:attention}rank{}.",
+                    "{C:inactive}Ex. 1,2,3,4,5 and 5,6,7,8,9{}"
+                }
+            }
+        },
         Planet={},
         Spectral={},
         Stake={},
@@ -19,13 +29,7 @@ return {
         blind_states={},
         challenge_names={},
         collabs={},
-        dictionary={
-            ml_snaking_desc = {
-                "{C:attention}Snaking Straights{} are two consecutive {C:attention}Straight{}s{}",
-                "that only have one overlapping {C:attention}Rank{}.",
-                "{C:inactive}Ex. 1,2,3,4,5 and 5,6,7,8,9{}"
-            }
-        },
+        dictionary={},
         high_scores={},
         labels={},
         poker_hand_descriptions={},

@@ -18,15 +18,17 @@ SMODS.Joker {
     loc_txt = {
         name = "Peripypo",
         text = {
-            "{C:roc_dummy}Snaking Straights{} add an additional {X:mult,C:white} X#2# {}",
+            "{C:snaking_straights}Snaking Straights{} add an additional {X:mult,C:white} X#2# {}",
             "Mult to this Joker.",
             "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
-            "{C:attention}Snaking Straights{} are two consecutive {C:attention}Straights{}",
-            "that only have one overlapping {C:attention}Rank{}.",
-            "{C:inactive}Ex. 1,2,3,4,5 and 5,6,7,8,9{}"
         },
     },
     discovered = true,
+
+    pools = {
+        ["Joker"] = true,
+        ["Alleecord"] = true,
+    },
 
     -- image parameters
     atlas = "PypoAtlas",
@@ -44,6 +46,8 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
+
+        info_queue[#info_queue + 1] = {key = 'o_snaking_desc', set = 'Other'}
 		
         return {
             vars = {
