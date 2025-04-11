@@ -38,27 +38,18 @@ SMODS.Joker {
     config = {
         extra = {
             base_xmult = 1,
-            additional_bonus = 1,
+            additional_bonus = 0.5,
         }
     },
 
     loc_vars = function(self, info_queue, card)
-		
-        if G.GAME.catdarkmult == nil then
-            return {
-                vars = {
-                    card.ability.extra.base_xmult,
-                    card.ability.extra.additional_bonus
-                }
-            }   
-        else
-            return {
-                vars = {
-                    G.GAME.catdarkmult + card.ability.extra.base_xmult,
-                    card.ability.extra.additional_bonus
-                }
+
+        return {
+            vars = {
+                G.GAME and card.ability.extra.base_xmult + G.GAME.catdarkmult or card.ability.extra.base_xmult,
+                card.ability.extra.additional_bonus
             }
-        end
+        }
 	end,
 
     -- Shop Price
@@ -81,7 +72,7 @@ SMODS.Joker {
         -- when gained, add 1x mult to global counter iff
         -- not from debuff
         if not(from_debuff) then
-            G.GAME.catdarkmult = G.GAME.catdarkmult + 1
+            G.GAME.catdarkmult = G.GAME.catdarkmult + card.ability.extra.additional_bonus
         end
     end,
 }
