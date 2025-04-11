@@ -7,7 +7,7 @@ local catdark_atlas = SMODS.Atlas {
     py = 95,
 
     -- image path
-    path = "test_card.png"
+    path = "Peripypo.png"
 }
 
 SMODS.Joker {
