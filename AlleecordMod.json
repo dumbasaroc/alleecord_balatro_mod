@@ -1,0 +1,12 @@
+{
+	"id": "alleecord_balatro_mod",
+	"name": "The Dino Nuggets",
+	"author": [ "DumbAsARoc", "VoxelChaos" ],
+	"description": "An Alleecord celebration mod - Everybody's here!",
+	"prefix": "ALLEECORD",
+	"main_file": "mod.lua",
+	"version": "0.0.2",
+	"dependencies": [
+        "Steamodded (>=1.*)"
+    ]
+}
