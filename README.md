@@ -1,6 +1,8 @@
 # <center>Alleecord Community Balatro Mod</center>
 <center><i>Coded by DumbAsARoc, Art by VoxelChaos</i></center>
 
+<p style="font-size: 28px;text-align: center;color: grey;"><i>This is a work in progress - please be patient!</i></p>
+
 ## How to install
 
 <b>First, ensure that you have Lovely and Steamodded installed. You can find both of these projects here:</b>
