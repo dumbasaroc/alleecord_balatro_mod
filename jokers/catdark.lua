@@ -44,12 +44,22 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
 
-        return {
-            vars = {
-                G.GAME and card.ability.extra.base_xmult + G.GAME.catdarkmult or card.ability.extra.base_xmult,
-                card.ability.extra.additional_bonus
+        if G.GAME.catdarkmult then
+            return {
+                vars = {
+                    card.ability.extra.base_xmult + G.GAME.catdarkmult,
+                    card.ability.extra.additional_bonus
+                }
             }
-        }
+        else
+            return {
+                vars = {
+                    card.ability.extra.base_xmult,
+                    card.ability.extra.additional_bonus
+                }
+            }
+        end    
+        
 	end,
 
     -- Shop Price
