@@ -35,15 +35,33 @@ SMODS.Joker {
     -- card variables
     config = {
         extra = {
-            chips_per = 64,
-            mult_per = 16,
+            chips_probabilities = {
+                {nchips = 1, cutoff = 1/10},
+                {nchips = 2, cutoff = 2/10},
+                {nchips = 4, cutoff = 4/10},
+                {nchips = 8, cutoff = 6/10},
+                {nchips = 16, cutoff = 8/10},
+                {nchips = 32, cutoff = 9/10},
+                {nchips = 64, cutoff = 10/10},
+            },
+            mult_probabilities = {
+                {nmult = 1, cutoff = 1/8},
+                {nmult = 2, cutoff = 3/8},
+                {nmult = 4, cutoff = 5/8},
+                {nmult = 8, cutoff = 7/8},
+                {nmult = 16, cutoff = 8/8},
+            }
         }
     },
 
+    -- NOTE FOR FUTURE ROC
+    -- Chips probabilities are either 1/10 or 2/10, depending
+    --   on how close they are to the center value
+    -- Mult probabilities are either 1/8 or 2/8 by the same metric
     loc_vars = function(self, info_queue, card)
 
-        chips_rand = {"1", "2", "4", "8", "16", "32", "64"}
-        mult_rand = {"1", "2", "4", "8", "16"}
+        chips_rand = {"1", "2", "4", "4", "8", "8", "16", "16", "32", "64"}
+        mult_rand = {"1", "2", "2", "4", "4", "8", "8", "16"}
         
         return {
             main_start = {
@@ -82,9 +100,27 @@ SMODS.Joker {
         if context.individual and context.cardarea == G.play then
             local other = context.other_card
             if other:get_id() == 2 or other:get_id() == 4 or other:get_id() == 8 then
+                local chips_roll = pseudorandom("dumbasaroc")
+                local mult_roll = pseudorandom("dumbasaroc")
+                local nchips = 1
+                local nmult = 1
+                
+                for _, chips_tbl in ipairs(card.ability.extra.chips_probabilities) do
+                    if chips_roll <= chips_tbl.cutoff then
+                        nchips = chips_tbl.nchips
+                        break
+                    end
+                end
+                for _, mult_tbl in ipairs(card.ability.extra.mult_probabilities) do
+                    if mult_roll <= mult_tbl.cutoff then
+                        nmult = mult_tbl.nmult
+                        break
+                    end
+                end
+
                 return {
-                    chips = card.ability.extra.chips_per,
-                    mult = card.ability.extra.mult_per
+                    chips = nchips,
+                    mult = nmult
                 }
             end
         end
