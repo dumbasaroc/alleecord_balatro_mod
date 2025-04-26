@@ -1,0 +1,16 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# get_X_same()
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if SMODS.has_no_rank(self) and not self.vampired then'''
+position = 'before'
+match_indent = true
+payload = '''
+if self.ability.effect == 'Stone Card' and not self.vampired and next(SMODS.find_card('j_ALLEECORD_stonewippen', false)) then
+  return 8887
+end
+'''
