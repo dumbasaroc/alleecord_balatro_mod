@@ -58,10 +58,13 @@ SMODS.Joker {
 	end,
 
     -- Shop Price
-    cost = 5,
+    cost = 8,
 
     -- Rarity (1 = Common to 4 = Legendary)
     rarity = 2,
+
+    -- Whether or not this (visually) works with Blueprint or the like
+    blueprint_compat = true,
 
     -- in-game calculation
     calculate = function(self, card, context)

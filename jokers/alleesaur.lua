@@ -100,6 +100,9 @@ SMODS.Joker {
     -- Rarity (1 = Common to 4 = Legendary)
     rarity = 4,
 
+    -- Whether or not this (visually) works with Blueprint or the like
+    blueprint_compat = false,
+
     -- in-game calculation
     calculate = function(self, card, context)
         -- This is left empty because the real
