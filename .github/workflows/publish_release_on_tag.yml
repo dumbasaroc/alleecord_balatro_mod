@@ -11,19 +11,29 @@ jobs:
 
     steps:
       - name: Print what triggered this
-        # if: startsWith(github.ref, 'refs/tags/')
         run: "echo $GITHUB_REF"
         env:
           GITHUB_REF: ${{ github.ref }}
       
       - name: Get Repository Files
-        # if: startsWith(github.ref, 'refs/tags/')
         uses: actions/checkout@v4
         with:
           path: 'alleemod'
       
-      - name: Make Sure Files Exist
-        # if: startsWith(github.ref, 'refs/tags/')
+      - name: Prep Release Files
         run: |
-          cd alleemod
-          ls
+          mkdir AlleecordMod
+          cp -r alleemod/assets alleemod/jokers alleemod/localization AlleecordMod
+          cp -r alleemod/AlleecordMod.json alleemod/misc.lua alleemod/mod.lua AlleecordMod
+
+      - name: Zip into Release
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -r AlleecordMod.zip AlleecordMod
+      
+      - name: Publish Release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: AlleecordMod.zip
+          asset_name: AlleecordMod-$tag.zip
+          overwrite: true
