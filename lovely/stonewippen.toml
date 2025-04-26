@@ -11,6 +11,7 @@ position = 'before'
 match_indent = true
 payload = '''
 if self.ability.effect == 'Stone Card' and not self.vampired and next(SMODS.find_card('j_ALLEECORD_stonewippen', false)) then
+  print("Setting ID to 8887")
   return 8887
 end
 '''
