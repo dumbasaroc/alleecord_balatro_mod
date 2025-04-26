@@ -39,7 +39,10 @@ return {
         suits_plural={},
         suits_singular={},
         tutorial={},
-        v_dictionary={},
+        v_dictionary={
+            a_xchips = { "X#1# Chips" },
+            a_add_xchips = { "+X#1# Chips" },
+        },
         v_text={},
     },
 }
