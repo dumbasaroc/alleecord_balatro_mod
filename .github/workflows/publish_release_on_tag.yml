@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Print what triggered this
+        run: "echo $GITHUB_REF"
+        env:
+          GITHUB_REF: ${{ github.ref }}
+      
       - name: Get Repository Files
         uses: actions/checkout@v4
         with:
