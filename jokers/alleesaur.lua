@@ -21,13 +21,6 @@ local onetime_atlas = SMODS.Atlas {
 
 SMODS.Enhancement {
     key = "onetime",
-    loc_txt = {
-        name = "One-Time Only Card",
-        text = {
-            "At the end of a hand, if this card",
-            "was scored, {C:attention}destroy{} this card."
-        }
-    },
 
     atlas = "OneTimeAtlas",
     pos = { x = 0, y = 0},
@@ -60,17 +53,6 @@ SMODS.Enhancement {
 SMODS.Joker {
     -- joker identifier
     key = "alleesaur",
-
-    -- description
-    loc_txt = {
-        name = "Alleesaur",
-        text = {
-            "If played hand has less than {C:attention}5{}",
-            "cards, duplicate one card at random until",
-            "there are 5 cards.",
-            "The created cards will be {C:attention}One-Time Cards{}.",
-        },
-    },
     discovered = true,
 
     pools = {

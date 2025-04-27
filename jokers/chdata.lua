@@ -13,17 +13,6 @@ local catdark_atlas = SMODS.Atlas {
 SMODS.Joker {
     -- joker identifier
     key = "chdata",
-
-    -- description
-    loc_txt = {
-        name = "Chdata",
-        text = {
-            "{C:attention}Doubles{} the spawn rate of",
-            "{C:attention}Rare{} and {C:attention}Uncommon{} Jokers, and",
-            "allows for {C:attention}Legendary{} Jokers to appear outside",
-            "of the Soul Spectral Card."
-        },
-    },
     discovered = true,
 
     pools = {

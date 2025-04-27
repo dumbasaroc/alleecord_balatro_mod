@@ -13,18 +13,6 @@ local catdark_atlas = SMODS.Atlas {
 SMODS.Joker {
     -- joker identifier
     key = "twiggy",
-
-    -- description
-    loc_txt = {
-        name = "Twigsagi",
-        text = {
-            "At the end of each round,",
-            "any {C:attention}Planet Cards{}",
-            "in the consumable area have a",
-            "{C:green}#1# in #2#{} chance to upgrade",
-            "their corresponding hand."
-        },
-    },
     discovered = true,
 
     pools = {

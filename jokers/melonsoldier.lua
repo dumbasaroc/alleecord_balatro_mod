@@ -13,16 +13,6 @@ local catdark_atlas = SMODS.Atlas {
 SMODS.Joker {
     -- joker identifier
     key = "melonsoldier",
-
-    -- description
-    loc_txt = {
-        name = "Melonsoldier",
-        text = {
-            "This joker gains {X:chips,C:white} X#2# {} Chips when",
-            "a {C:attention}Jack{} is scored.",
-            "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
-        },
-    },
     discovered = true,
 
     pools = {

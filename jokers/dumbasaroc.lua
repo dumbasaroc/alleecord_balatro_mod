@@ -13,14 +13,6 @@ local catdark_atlas = SMODS.Atlas {
 SMODS.Joker {
     -- joker identifier
     key = "dumbasaroc",
-
-    -- description
-    loc_txt = {
-        name = "DumbAsARoc",
-        text = {
-            ""
-        },
-    },
     discovered = true,
 
     pools = {
