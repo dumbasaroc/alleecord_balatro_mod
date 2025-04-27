@@ -5,7 +5,7 @@
 	"description": "An Alleecord celebration mod - Everybody's here!",
 	"prefix": "ALLEECORD",
 	"main_file": "mod.lua",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"dependencies": [
         "Steamodded (>=1.*)"
     ]
