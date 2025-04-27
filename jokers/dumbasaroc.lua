@@ -60,8 +60,8 @@ SMODS.Joker {
     -- Mult probabilities are either 1/8 or 2/8 by the same metric
     loc_vars = function(self, info_queue, card)
 
-        chips_rand = {"1", "2", "4", "4", "8", "8", "16", "16", "32", "64"}
-        mult_rand = {"1", "2", "2", "4", "4", "8", "8", "16"}
+        local chips_rand = {"1", "2", "4", "4", "8", "8", "16", "16", "32", "64"}
+        local mult_rand = {"1", "2", "2", "4", "4", "8", "8", "16"}
         
         return {
             main_start = {

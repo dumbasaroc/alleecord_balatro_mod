@@ -72,7 +72,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         
         if context.joker_main then
-            xmult_curr = G.GAME.catdarkmult + card.ability.extra.base_xmult
+            local xmult_curr = G.GAME.catdarkmult + card.ability.extra.base_xmult
 
             return {
                 xmult = xmult_curr
