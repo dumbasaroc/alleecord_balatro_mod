@@ -13,16 +13,6 @@ local catdark_atlas = SMODS.Atlas {
 SMODS.Joker {
     -- joker identifier
     key = "pypo",
-
-    -- description
-    loc_txt = {
-        name = "Peripypo",
-        text = {
-            "{C:snaking_straights}Snaking Straights{} add an additional {X:mult,C:white} X#2# {}",
-            "Mult to this Joker.",
-            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
-        },
-    },
     discovered = true,
 
     pools = {

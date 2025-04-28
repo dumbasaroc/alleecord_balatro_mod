@@ -21,13 +21,6 @@ local onetime_atlas = SMODS.Atlas {
 
 SMODS.Enhancement {
     key = "onetime",
-    loc_txt = {
-        name = "One-Time Only Card",
-        text = {
-            "At the end of a hand, if this card",
-            "was scored, {C:attention}destroy{} this card."
-        }
-    },
 
     atlas = "OneTimeAtlas",
     pos = { x = 0, y = 0},
@@ -60,17 +53,6 @@ SMODS.Enhancement {
 SMODS.Joker {
     -- joker identifier
     key = "alleesaur",
-
-    -- description
-    loc_txt = {
-        name = "Alleesaur",
-        text = {
-            "If played hand has less than {C:attention}5{}",
-            "cards, duplicate one card at random until",
-            "there are 5 cards.",
-            "The created cards will be {C:attention}One-Time Cards{}.",
-        },
-    },
     discovered = true,
 
     pools = {
@@ -111,3 +93,39 @@ SMODS.Joker {
         -- function that identifies hands.
     end,
 }
+
+
+-- Allee custom scoring loop
+local evaluate_play_ref = G.FUNCS.evaluate_play
+G.FUNCS.evaluate_play = function(e)
+    
+    local has_allee_joker = SMODS.find_card("j_ALLEECORD_alleesaur", false)
+    local is_allee_active = false
+    local allee_joker = nil
+    if has_allee_joker[1] then
+        allee_joker = has_allee_joker[1]
+        is_allee_active = true
+    end
+
+    if is_allee_active then
+
+        assert(allee_joker, "Could not find Allee Joker while assuming it exists.")
+
+        local cards = G.play.cards
+        if #cards < 5 then
+            local selected_card = cards[pseudorandom("alleesaur", 1, #cards)]
+
+            while #G.play.cards < 5 do
+                local c = copy_card(selected_card, nil, nil, G.playing_card)
+                c:set_ability(G.P_CENTERS.m_ALLEECORD_onetime, nil, true)
+                c:add_to_deck()
+                G.play:emplace(c)
+                table.insert(G.playing_cards, c)
+            end
+        end
+
+        card_eval_status_text(allee_joker, 'extra', nil, nil, nil, { message = "Friend Group!" })
+    end
+
+    evaluate_play_ref(e)
+end
