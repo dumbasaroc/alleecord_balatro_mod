@@ -67,6 +67,15 @@ return {
                 },
             },
 
+            j_ALLEECORD_stonewippen = {
+                name = "Stonewippen",
+                text = {
+                    "{C:attention}Stone Cards{} now count as {C:attention}every rank{}",
+                    "when determining your scoring hand",
+                    "instead of having no rank."
+                },
+            },
+
             j_ALLEECORD_twiggy = {
                 name = "Twigsagi",
                 text = {
