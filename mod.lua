@@ -1,6 +1,14 @@
 -- Get mod path
 local mod_path = "" .. SMODS.current_mod.path
 
+-- Set Mod Icon
+SMODS.Atlas {
+    key = "modicon",
+    path = "mod_icon.png",
+    px = 64,
+    py = 64,
+}
+
 -- Load misc.lua
 local f, err = SMODS.load_file("misc.lua")
 if err then
