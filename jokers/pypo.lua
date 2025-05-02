@@ -103,6 +103,9 @@ SMODS.Joker {
 
                 if card.ability.extra.did_play_straight_last and is_hand_snaking(card.ability.extra.last_played_straight, this_hand) then
                     card.ability.extra.current_bonus = card.ability.extra.current_bonus + card.ability.extra.additional_bonus
+
+                    card.ability.extra.did_play_straight_last = true
+                    card.ability.extra.last_played_straight = this_hand
                     
                     return {
                         message = "Snaked!",
