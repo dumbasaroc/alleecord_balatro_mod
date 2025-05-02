@@ -9,6 +9,13 @@ SMODS.Atlas {
     py = 64,
 }
 
+-- -- Add Allee Deck Skin
+local f, err = SMODS.load_file("DeckSkin.lua")
+if err then
+    error(err)
+end
+f()
+
 -- Load misc.lua
 local f, err = SMODS.load_file("misc.lua")
 if err then
