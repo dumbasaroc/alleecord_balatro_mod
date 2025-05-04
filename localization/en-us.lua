@@ -49,10 +49,19 @@ return {
                 },
             },
 
+            j_ALLEECORD_fairyu = {
+                name = "Fairyu",
+                text = {
+                    "This Joker gives {X:chips,C:white} X#1# {} Chips",
+                    "for each {C:attention}Clubs{} card in the deck.",
+                    "{C:inactive}(Currently {X:chips,C:white} X#2# {C:inactive} Chips)"
+                }
+            },
+
             j_ALLEECORD_melonsoldier = {
                 name = "Melonsoldier",
                 text = {
-                    "This joker gains {X:chips,C:white} X#2# {} Chips when",
+                    "This Joker gains {X:chips,C:white} X#2# {} Chips when",
                     "a {C:attention}Jack{} is scored.",
                     "{C:inactive}(Currently {X:chips,C:white} X#1# {C:inactive} Chips)"
                 },
