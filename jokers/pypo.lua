@@ -107,7 +107,7 @@ SMODS.Joker {
                     card.ability.extra.last_played_straight = this_hand
                     
                     return {
-                        message = "Snaked!",
+                        message = localize{ type = "variable", key = "a_pypo_snaked" },
                         colour = G.C.PURPLE
                     }
                 end

@@ -131,8 +131,8 @@ return {
         suits_singular={},
         tutorial={},
         v_dictionary={
-            a_xchips = { "X#1# Chips" },
-            a_add_xchips = { "+X#1# Chips" },
+            a_pypo_snaked = "Snaked!",
+            a_allee_collab = "Collab!",
         },
         v_text={},
     },

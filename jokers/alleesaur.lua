@@ -125,7 +125,7 @@ G.FUNCS.evaluate_play = function(e)
             end
         end
 
-        card_eval_status_text(allee_joker, 'extra', nil, nil, nil, { message = "Friend Group!" })
+        card_eval_status_text(allee_joker, 'extra', nil, nil, nil, { message = localize{ type = "variable", key = "a_allee_collab" } })
     end
 
     evaluate_play_ref(e)
