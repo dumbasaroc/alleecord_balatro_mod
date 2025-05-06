@@ -115,6 +115,7 @@ G.FUNCS.evaluate_play = function(e)
         local cards = G.play.cards
         if #cards < 5 then
             local selected_card = cards[pseudorandom("alleesaur", 1, #cards)]
+            local cards_added = {}
 
             while #G.play.cards < 5 do
                 local c = copy_card(selected_card, nil, nil, G.playing_card)
@@ -122,10 +123,13 @@ G.FUNCS.evaluate_play = function(e)
                 c:add_to_deck()
                 G.play:emplace(c)
                 table.insert(G.playing_cards, c)
+                table.insert(cards_added, c)
+                -- G.playing_cards:emplace(c)
             end
-        end
 
-        card_eval_status_text(allee_joker, 'extra', nil, nil, nil, { message = localize{ type = "variable", key = "a_allee_collab" } })
+            card_eval_status_text(allee_joker, 'extra', nil, nil, nil, { message = localize{ type = "variable", key = "a_allee_collab" } })
+            playing_card_joker_effects(cards_added)
+        end
     end
 
     evaluate_play_ref(e)
