@@ -25,6 +25,10 @@ SMODS.Enhancement {
     atlas = "OneTimeAtlas",
     pos = { x = 0, y = 0},
 
+    in_pool = function (self, args)
+        return false
+    end,
+
     calculate = function(self, card, context)
 
         if context.main_scoring and context.cardarea == G.play then
@@ -56,7 +60,6 @@ SMODS.Joker {
     discovered = true,
 
     pools = {
-        ["Joker"] = true,
         ["Alleecord"] = true,
     },
 
@@ -67,9 +70,7 @@ SMODS.Joker {
 
     -- card variables
     config = {
-        extra = {
-            
-        }
+        extra = {}
     },
 
     -- loc_vars = function(self, info_queue, card)	

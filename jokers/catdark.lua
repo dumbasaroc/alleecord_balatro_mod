@@ -17,7 +17,6 @@ SMODS.Joker {
 
     pools = {
         ["Joker"] = true,
-        ["Alleecord"] = true,
     },
 
     -- image parameters

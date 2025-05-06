@@ -40,7 +40,6 @@ SMODS.Joker {
     discovered = true,
 
     pools = {
-        ["Joker"] = true,
         ["Alleecord"] = true,
     },
 
